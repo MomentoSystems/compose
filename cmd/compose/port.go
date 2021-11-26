@@ -28,7 +28,7 @@ import (
 
 type portOptions struct {
 	*projectOptions
-	port     int
+	port     uint16
 	protocol string
 	index    int
 }
