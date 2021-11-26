@@ -46,8 +46,13 @@ func portCommand(p *projectOptions, backend api.Service) *cobra.Command {
 			if err != nil {
 				return err
 			}
+			
+			if port >=1 && port <=65535 {
+				
 			opts.port = port
 			return nil
+				
+			}
 		}),
 		RunE: Adapt(func(ctx context.Context, args []string) error {
 			return runPort(ctx, backend, opts, args[0])
